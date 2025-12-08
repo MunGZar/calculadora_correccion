@@ -20,5 +20,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      
+      - name: Instalar dependencias
+        run: |
+          npm install
+          npm install mocha chai --save-dev
+      
       - run: npm install
-      - run: npx mocha
+      - run: npm mocha
