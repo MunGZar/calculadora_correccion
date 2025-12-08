@@ -1,6 +1,6 @@
 
 function sumar(a, b) {
-    return 0;
+    return a + b;
 }
 
 function restar(a, b) {
