@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora NodeJS</title>
+</head>
+<body>
+    <h1>Calculadora Web - Suma y Resta</h1>
+
+    <input id="a" type="number" placeholder="Número A">
+    <input id="b" type="number" placeholder="Número B">
+
+    <br><br>
+
+    <button onclick="calcular('sumar')">Sumar</button>
+    <button onclick="calcular('restar')">Restar</button>
+
+    <h2>Resultado: <span id="resultado">-</span></h2>
+
+    <script>
+        async function calcular(operacion) {
+            const a = Number(document.getElementById('a').value);
+            const b = Number(document.getElementById('b').value);
+
+            const res = await fetch(`/${operacion}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ a, b })
+            });
+
+            const data = await res.json();
+            document.getElementById("resultado").innerText = data.resultado;
+        }
+    </script>
+</body>
+</html>
