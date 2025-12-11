@@ -33,8 +33,9 @@ jobs:
       - name: Instalar Mocha y Chai
         run: npm install mocha chai --save-dev
 
+      
       - name: Ejecutar pruebas
-        run: npx mocha
+        run: node node_modules/mocha/bin/mocha.js
 
 
 
