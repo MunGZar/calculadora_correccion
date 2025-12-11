@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { sumar, restar } from "../calculadora.js";
+import { sumar, restar } from "../src/calculadora";
 
 describe("Calculadora", () => {
   it("sumar 2 + 2 = 4", () => {
