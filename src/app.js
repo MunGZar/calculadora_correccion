@@ -2,14 +2,14 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-
+/* */
 
 app.use(express.static(__dirname));
 
 app.use(express.json());
 
 
-const { sumar, restar } = require("./calculadora");
+const { sumar, restar }= require("./calculadora");
 
 
 app.post("/sumar", (req, res) => {
